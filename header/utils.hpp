@@ -6,20 +6,20 @@
 
 class Utils {
 public:
-    void print_item(Item item) {
+    void print_item(Item item, TextSize text_size) {
         
     }
 
 private:
-    std::string name_handler() {
+    std::string name_handler(int max_size) {
 
     }
 
-    std::string price_handler() {
+    std::string price_handler(int max_size) {
 
     }
 
-    std::string quantity_handler() {
+    std::string quantity_handler(int max_size) {
         
     }
 }
