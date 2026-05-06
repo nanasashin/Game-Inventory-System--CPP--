@@ -7,20 +7,15 @@
 class Utils {
 public:
     void print_item(Item item, TextSize text_size) {
-        
+         
     }
 
 private:
-    std::string name_handler(int max_size) {
-
-    }
-
-    std::string price_handler(int max_size) {
-
-    }
-
-    std::string quantity_handler(int max_size) {
-        
+    std::string text_handler(std::string text, int max_size) {
+        while (text.length() < max_size) {
+             text += " ";
+        }
+        return text;
     }
 }
 
