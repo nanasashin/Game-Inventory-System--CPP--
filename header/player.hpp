@@ -5,7 +5,22 @@
 
 class Player {
 public:
-    void put_armor () {
+    void put_armor (Armor armor, ArmorType armor_type) {
+        switch (armor_type) {
+            case ArmorType::head:
+                break;
+            case ArmorType::chest:
+                break;
+            case ArmorType::leggings:
+                break;
+            case ArmorType::boots:
+                break;
+            default:
+                break;
+        }
+    }
+
+    void give_item() {
 
     }
 
