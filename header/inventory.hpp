@@ -40,6 +40,7 @@ public:
 
 private:
     std::map<std::string, Item> inventory;
+    TextSize text_size = TextSize{};
 
     bool not_null_item(Item item) {
         if (item == Item{}) throw std::invalid_argument("Is a null item");
