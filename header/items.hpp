@@ -1,4 +1,4 @@
-we#ifndef ITEMS_HPP_
+#ifndef ITEMS_HPP_
 #define ITEMS_HPP_
 
 #include <vector>
@@ -37,7 +37,7 @@ struct Money {
     int value;  
 };
 
-struct text_size {
+struct TextSize {
     int item;
     int price;
     int quantity;
