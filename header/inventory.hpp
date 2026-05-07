@@ -9,13 +9,13 @@
 class InventoryHandler{
 public:
     void add_item(Item item) {
-        if (not_null_item(item)) {
+        if (item_in_inventory(item)) {
             inventory[item.name] = item;
         }
     }
 
     Money sell_item(Item item, int amount) {
-        if (not_null_item(item)) {
+        if (item_in_inventory(item)) {
             int temp = item.quantity;
             item.quantity - amount;
             if (item.quantity <= 0) {
@@ -41,11 +41,6 @@ public:
 private:
     std::map<std::string, Item> inventory;
     TextSize text_size = TextSize{};
-
-    bool not_null_item(Item item) {
-        if (item == Item{}) throw std::invalid_argument("Is a null item");
-        return true;
-    }
 
     bool item_in_inventory(std::string name) {
         if (inventory.count(name) == 0) throw std::invalid_argument("Item not Found");
