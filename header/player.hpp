@@ -8,7 +8,7 @@ class Player {
 public:
     Player(InventoryHandler inventory) : inventory(inventory) {} 
 
-    void put_armor (Armor armor, ArmorType armor_type) {
+    void put_armor (Armor armor) {
         switch (armor_type) {
             case ArmorType::head:
                 break;

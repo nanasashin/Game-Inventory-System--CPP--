@@ -6,42 +6,58 @@
 
 class Armor {
 public:
-    Armor(std::string name) : name(name) {}
+    enum Type {
+        head,
+        chest,
+        leggings, 
+        boots
+    };
 
 private:
     std::string name;
+    Type a_type;
+
+public:
+    Armor(std::string name, Type a_type) : name(name), a_type(a_type) {}
 };
 
-enum ItemType {
-    armor,
-    food,
-    crafting, 
-    building,
+
+
+class Consumables {
+public:
+    struct Gold {
+        int value = 0;  
+    };
 };
 
-enum ArmorType {
-    head,
-    chest,
-    leggings,
-    boots
-};
 
-struct Money {
-    int value;  
-};
 
-struct Item {
+class Item {
+public:
+    enum Type {
+        armor,
+        food,
+        crafting, 
+        building,
+    };
+
+    struct item {
+        
+    }
+
+private:
     std::string name;
-    ItemType type;
-    Money sell_price;
-    int quantity = 0;
+    Consumables::Gold sell_price;
+    int quantity;
+    Type i_type;
+
+public:
+    Item(std::string name, Type i_type, int quantity=1) : name(name), i_type(i_type), quantity(quantity) {}
+    
+    std::string get_name() {
+        return name;
+    }
 };
 
-enum TextSize {
-    name = 30,
-    price = 6,
-    quantity = 4,
-    type = 10,
-};
 
 #endif

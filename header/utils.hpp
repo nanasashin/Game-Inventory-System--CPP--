@@ -17,13 +17,22 @@ public:
             case ItemType::building: i_type = "Building"; break;
         }
 
-        std::cout << " | " << text_handler(i_type, TextSize::type) 
-                << " | " << text_handler(item.name, TextSize::name) 
-                << " | " << text_handler(std::to_string(item.quantity), TextSize::quantity) 
-                << " | " << text_handler(std::to_string(item.sell_price.value), TextSize::price) << "\n";
+        std::cout 
+            << " | " << text_handler(i_type, TextSize::type) 
+            << " | " << text_handler(item.name, TextSize::name) 
+            << " | " << text_handler(std::to_string(item.quantity), TextSize::quantity) 
+            << " | " << text_handler(std::to_string(item.sell_price.value), TextSize::price) << "\n"
+        ;
     }
 
 private:
+    enum TextSize {
+        name = 30,
+        price = 6,
+        quantity = 4,
+        type = 10,
+    };
+
     static std::string text_handler(std::string text, int max_size) {
         while (text.length() < max_size) {
              text += " ";

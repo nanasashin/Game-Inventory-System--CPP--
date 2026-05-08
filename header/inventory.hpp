@@ -9,17 +9,15 @@
 class InventoryHandler{
 public:
     void add_item(Item item) {
-        if (item_in_inventory(item.name)) {
-            inventory[item.name] = item;
-        }
+        if (item_in_inventory(item.name)) inventory[item.name] = item;
     }
 
-    Money sell_item(std::string name, int amount) {
+    void sell_item(std::string name, int amount) {
         if (item_in_inventory(name)) {
             int amount = (amount > inventory[name].quantity) ? inventory[name].quantity : amount;
             inventory[name].quantity -= amount;
             if (inventory[name].quantity == 0) delete_item(name);
-            return Money {amount * inventory[name].sell_price.value};
+            money.value += amount * inventory[name].sell_price.value;
         }
     }
 
@@ -35,12 +33,13 @@ public:
         if (item_in_inventory(name)) {
             return inventory[name];
         } 
-        return Item{};
+        return Item;
     }
 
 private:
     std::map<std::string, Item> inventory;
-    TextSize text_size = TextSize{};
+
+    Item::Money money;
 
     bool item_in_inventory(std::string name) {
         if (inventory.count(name) == 0) throw std::invalid_argument("Item not Found");
@@ -54,9 +53,7 @@ private:
     }
 
     void delete_item(std::string name) {
-        if (!item_in_inventory(name)){ 
-            throw std::invalid_argument("No Item to Delete");
-        }
+        if (!item_in_inventory(name)) throw std::invalid_argument("No Item to Delete");
         inventory.erase(name);
     }
 };
