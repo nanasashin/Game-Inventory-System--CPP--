@@ -4,5 +4,6 @@
 #include "../header/player.hpp"
 
 int main() {
+    Player player("nanashi");
     return 0;
 }

@@ -15,10 +15,17 @@ struct Armor {
     Type a_type;
 };
 
+struct Weapon {
+    enum Type {longsword, dagger, bow, staff};
+    
+    std::string name = "";
+    Type w_type;
+};
+
 struct Item {
     enum Type {armor, food, crafting, building};
 
-    std::string name;
+    std::string name = "";
     Type type;
     Money sell_price;
     int quantity = 0;

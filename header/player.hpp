@@ -5,33 +5,26 @@
 
 class Player {
 public:
-    void put_armor (Armor armor) {
-        switch (armor.a_type) 
-        {
-        case Armor::head:
-            break;
-        case Armor::chest:
-            break;
-        case Armor::leggings:
-            break;
-        case Armor::boots:
-            break;
-        default:
-            break;
+    Player(std::string name) : name(name) {}
+
+    void put_armor(Armor armor) {
+        if (player_armor[armor.a_type].name == "") {
+            player_armor[armor.a_type] = armor;
         }
     }
 
-    void give_item() {
-
+    void put_weapon(Weapon weapon) {
+        if (player_weapon.name == "") {
+            player_weapon = weapon;
+        }
     }
 
 private:
-    struct player_armor {
-        Armor head;
-        Armor chest;
-        Armor leggings;
-        Armor boots;
-    };
+    InventoryHandler inventory;
+    std::string name;
+
+    Armor player_armor[4];
+    Weapon player_weapon;
 
     int money = 0;
 };

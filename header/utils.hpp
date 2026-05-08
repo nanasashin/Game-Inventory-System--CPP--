@@ -34,7 +34,7 @@ public:
 private:
     static std::string text_handler(std::string text, int max_size) {
         while (text.length() < max_size) {
-             text += " ";
+            text += " ";
         }
         return text;
     }
