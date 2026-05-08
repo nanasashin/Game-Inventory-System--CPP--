@@ -9,6 +9,7 @@
 class InventoryHandler{
 public:
     void add_item(Item item) {
+<<<<<<< HEAD
         if (item_in_inventory(item.name)) inventory[item.name] = item;
     }
 
@@ -18,19 +19,32 @@ public:
             inventory[name].quantity -= amount;
             if (inventory[name].quantity == 0) delete_item(name);
             money.value += amount * inventory[name].sell_price.value;
+=======
+        if (item_in_inventory(item)) {
+            inventory[item.name] = item;
+        }
+    }
+
+    Money sell_item(Item item, int amount) {
+        if (item_in_inventory(item)) {
+            int temp = item.quantity;
+            item.quantity - amount;
+            if (item.quantity <= 0) {
+                delete_item(item.name);
+            }
+            return Money {temp * amount};
+>>>>>>> parent of e831f43 (Update #2)
         }
     }
 
     void display_inventory() {
         if (!inventory_is_empty()) {
-            for (const auto& [key, value] : inventory) {
-                Utils::print_item(value);
-            }
+
         }
     }
 
     Item search_item(std::string name) {
-        if (item_in_inventory(name)) {
+        if (item_in_inventory(item)) {
             return inventory[name];
         } 
         return Item;

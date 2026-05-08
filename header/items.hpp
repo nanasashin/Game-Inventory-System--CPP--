@@ -30,6 +30,22 @@ public:
     };
 };
 
+<<<<<<< HEAD
+=======
+enum ArmorType {
+    head,
+    chest,
+    leggings,
+    boots
+}
+
+struct Item {
+    std::string name;
+    ItemType type;
+    int sell_price;
+    int quantity = 0;
+};
+>>>>>>> parent of e831f43 (Update #2)
 
 
 class Item {
@@ -59,5 +75,10 @@ public:
     }
 };
 
+struct TextSize {
+    int item;
+    int price;
+    int quantity;
+};
 
 #endif

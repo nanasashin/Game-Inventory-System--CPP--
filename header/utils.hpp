@@ -2,11 +2,11 @@
 #define UTILS_HPP_
 
 #include <iostream>
-#include <string>
 #include "items.hpp"
 
 class Utils {
 public:
+<<<<<<< HEAD
     static void print_item(Item item) {
         std::string i_type;
         switch (item.type)
@@ -34,11 +34,19 @@ private:
     };
 
     static std::string text_handler(std::string text, int max_size) {
+=======
+    void print_item(Item item, TextSize text_size) {
+         
+    }
+
+private:
+    std::string text_handler(std::string text, int max_size) {
+>>>>>>> parent of e831f43 (Update #2)
         while (text.length() < max_size) {
              text += " ";
         }
         return text;
     }
-};
+}
 
 #endif
