@@ -4,6 +4,10 @@
 #include <vector>
 #include <string>
 
+struct Money {
+    int value;
+};
+
 struct Armor {
     enum Type {head, chest, leggings, boots};
 
@@ -11,16 +15,12 @@ struct Armor {
     Type a_type;
 };
 
-struct Money {
-    int value;
-};
-
 struct Item {
     enum Type {armor, food, crafting, building};
 
     std::string name;
     Type type;
-    int sell_price;
+    Money sell_price;
     int quantity = 0;
 };
 

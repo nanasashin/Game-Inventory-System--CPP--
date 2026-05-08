@@ -6,17 +6,18 @@
 class Player {
 public:
     void put_armor (Armor armor) {
-        switch (armor.a_type) {
-            case Armor::Type::head:
-                break;
-            case Armor::Type::chest:
-                break;
-            case Armor::Type::leggings:
-                break;
-            case Armor::Type::boots:
-                break;
-            default:
-                break;
+        switch (armor.a_type) 
+        {
+        case Armor::head:
+            break;
+        case Armor::chest:
+            break;
+        case Armor::leggings:
+            break;
+        case Armor::boots:
+            break;
+        default:
+            break;
         }
     }
 

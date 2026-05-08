@@ -9,25 +9,23 @@
 class InventoryHandler{
 public:
     void add_item(Item item) {
-        if (item_in_inventory(item.name)) {
-            inventory[item.name] = item;
-        }
+        if (item_in_inventory(item.name)) inventory[item.name] = item;
     }
 
     Money sell_item(Item item, int amount) {
         if (item_in_inventory(item.name)) {
             int temp = item.quantity;
             item.quantity - amount;
-            if (item.quantity <= 0) {
-                delete_item(item.name);
-            }
+            if (item.quantity <= 0) delete_item(item.name);
             return Money {temp * amount};
         }
     }
 
     void display_inventory() {
         if (!inventory_is_empty()) {
-
+            for (const auto& [key, value] : inventory) {
+                Utils::print_item(value);
+            }
         }
     }
 
