@@ -5,21 +5,15 @@
 
 class Player {
 public:
-<<<<<<< HEAD
-    Player(InventoryHandler inventory) : inventory(inventory) {} 
-
     void put_armor (Armor armor) {
-=======
-    void put_armor (Armor armor, ArmorType armor_type) {
->>>>>>> parent of e831f43 (Update #2)
-        switch (armor_type) {
-            case ArmorType::head:
+        switch (armor.a_type) {
+            case Armor::Type::head:
                 break;
-            case ArmorType::chest:
+            case Armor::Type::chest:
                 break;
-            case ArmorType::leggings:
+            case Armor::Type::leggings:
                 break;
-            case ArmorType::boots:
+            case Armor::Type::boots:
                 break;
             default:
                 break;

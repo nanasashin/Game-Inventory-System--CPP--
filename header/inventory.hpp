@@ -9,31 +9,19 @@
 class InventoryHandler{
 public:
     void add_item(Item item) {
-<<<<<<< HEAD
-        if (item_in_inventory(item.name)) inventory[item.name] = item;
-    }
-
-    void sell_item(std::string name, int amount) {
-        if (item_in_inventory(name)) {
-            int amount = (amount > inventory[name].quantity) ? inventory[name].quantity : amount;
-            inventory[name].quantity -= amount;
-            if (inventory[name].quantity == 0) delete_item(name);
-            money.value += amount * inventory[name].sell_price.value;
-=======
-        if (item_in_inventory(item)) {
+        if (item_in_inventory(item.name)) {
             inventory[item.name] = item;
         }
     }
 
     Money sell_item(Item item, int amount) {
-        if (item_in_inventory(item)) {
+        if (item_in_inventory(item.name)) {
             int temp = item.quantity;
             item.quantity - amount;
             if (item.quantity <= 0) {
                 delete_item(item.name);
             }
             return Money {temp * amount};
->>>>>>> parent of e831f43 (Update #2)
         }
     }
 
@@ -44,16 +32,16 @@ public:
     }
 
     Item search_item(std::string name) {
-        if (item_in_inventory(item)) {
+        if (item_in_inventory(name)) {
             return inventory[name];
         } 
-        return Item;
+        return Item{};
     }
 
 private:
     std::map<std::string, Item> inventory;
 
-    Item::Money money;
+    Money money;
 
     bool item_in_inventory(std::string name) {
         if (inventory.count(name) == 0) throw std::invalid_argument("Item not Found");

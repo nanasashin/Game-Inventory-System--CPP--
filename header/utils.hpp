@@ -6,47 +6,17 @@
 
 class Utils {
 public:
-<<<<<<< HEAD
-    static void print_item(Item item) {
-        std::string i_type;
-        switch (item.type)
-        {
-            case ItemType::armor: i_type = "Armor"; break;
-            case ItemType::food: i_type = "Food"; break;
-            case ItemType::crafting: i_type = "Crafting"; break;
-            case ItemType::building: i_type = "Building"; break;
-        }
-
-        std::cout 
-            << " | " << text_handler(i_type, TextSize::type) 
-            << " | " << text_handler(item.name, TextSize::name) 
-            << " | " << text_handler(std::to_string(item.quantity), TextSize::quantity) 
-            << " | " << text_handler(std::to_string(item.sell_price.value), TextSize::price) << "\n"
-        ;
-    }
-
-private:
-    enum TextSize {
-        name = 30,
-        price = 6,
-        quantity = 4,
-        type = 10,
-    };
-
-    static std::string text_handler(std::string text, int max_size) {
-=======
-    void print_item(Item item, TextSize text_size) {
-         
+    void print_item(Item item) {
+        
     }
 
 private:
     std::string text_handler(std::string text, int max_size) {
->>>>>>> parent of e831f43 (Update #2)
         while (text.length() < max_size) {
              text += " ";
         }
         return text;
     }
-}
+};
 
 #endif
