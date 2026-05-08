@@ -2,9 +2,12 @@
 #define PLAYER_HPP_
 
 #include "items.hpp"
+#include "inventory.hpp"
 
 class Player {
 public:
+    Player(InventoryHandler inventory) : inventory(inventory) {} 
+
     void put_armor (Armor armor, ArmorType armor_type) {
         switch (armor_type) {
             case ArmorType::head:
@@ -25,6 +28,7 @@ public:
     }
 
 private:
+    InventoryHandler inventory;
     struct player_armor {
         Armor head;
         Armor chest;

@@ -4,7 +4,5 @@
 #include "../header/player.hpp"
 
 int main() {
-    
-
     return 0;
 }

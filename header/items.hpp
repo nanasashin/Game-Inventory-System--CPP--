@@ -24,23 +24,24 @@ enum ArmorType {
     chest,
     leggings,
     boots
-}
-
-struct Item {
-    std::string name;
-    ItemType type;
-    int sell_price;
-    int quantity = 0;
 };
 
 struct Money {
     int value;  
 };
 
-struct TextSize {
-    int item;
-    int price;
-    int quantity;
+struct Item {
+    std::string name;
+    ItemType type;
+    Money sell_price;
+    int quantity = 0;
+};
+
+enum TextSize {
+    name = 30,
+    price = 6,
+    quantity = 4,
+    type = 10,
 };
 
 #endif
