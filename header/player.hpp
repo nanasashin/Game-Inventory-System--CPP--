@@ -43,7 +43,7 @@ private:
     Weapon player_weapon;
     Parameter parameter{100, 100, 100};
 
-    int money = 0;
+    Money money;
 };
 
 #endif

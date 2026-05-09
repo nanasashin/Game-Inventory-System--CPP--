@@ -3,13 +3,6 @@
 
 class Parameter {
 public:
-    Parameter() {}
-    Parameter(float max_health, float max_stamina, float max_mana) : max_parameter{max_health, max_stamina, max_mana}{
-        for (int i = 0; i < MAX_TYPE; i++) {
-            current_parameter[i] = max_parameter[i];
-        }
-    }
-
     enum Type {
         health,
         stamina, 
@@ -28,12 +21,18 @@ public:
         float value;
     };
 
-    float current_parameter[MAX_TYPE];
-
 private:
+    float current_parameter[MAX_TYPE];
     float max_parameter[MAX_TYPE];
 
 public:
+    Parameter() {}
+    Parameter(float max_health, float max_stamina, float max_mana) : max_parameter{max_health, max_stamina, max_mana}{
+        for (int i = 0; i < MAX_TYPE; i++) {
+            current_parameter[i] = max_parameter[i];
+        }
+    }
+
     void update_value(Type type, UpdateType update_type, UpdateValue value) {
         switch (update_type) 
         {

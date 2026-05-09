@@ -8,12 +8,27 @@ class Utils {
 private:
     enum TextSize {
         name = 30,
-        price = 6,
-        quantity = 4,
+        price = 10,
+        quantity = 10,
         type = 10,
     };
 
 public:
+    static void print_inventory_header() {
+        std::cout
+            << "=========================================================================\n"
+            << " | " << text_handler("Item Type", TextSize::type)
+            << " | " << text_handler("Item Name", TextSize::name)
+            << " | " << text_handler("Quantity", TextSize::quantity)
+            << " | " << text_handler("Price", TextSize::price) << "\n"
+            << "=========================================================================\n"
+        ;
+    }
+
+    static void print_inventory_footer() {
+        std::cout << "=========================================================================\n";
+    }
+
     static void print_item(Item item) {
         std::string temp;
         switch (item.type) {
@@ -28,7 +43,7 @@ public:
             << " | " << text_handler(temp, TextSize::type)
             << " | " << text_handler(item.name, TextSize::name)
             << " | " << text_handler(std::to_string(item.quantity), TextSize::quantity)
-            << " | " << text_handler(std::to_string(item.sell_price.value), TextSize::price) << "\n"
+            << " | " << text_handler("$ " + std::to_string(item.sell_price.value), TextSize::price) << "\n"
         ;
     }
 

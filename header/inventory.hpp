@@ -10,7 +10,7 @@ class InventoryHandler{
 public:
     void add_item(Item item) {
         if (!item_in_inventory(item.name)) inventory[item.name] = item;
-        else inventory[item.name].quantity = item.quantity;
+        else inventory[item.name].quantity += item.quantity;
     }
 
     Money sell_item(Item item, int amount) {
@@ -24,9 +24,11 @@ public:
 
     void display_inventory() {
         if (!inventory_is_empty()) {
+            Utils::print_inventory_header();
             for (const auto& [key, value] : inventory) {
                 Utils::print_item(value);
             }
+            Utils::print_inventory_footer();
         }
     }
 
