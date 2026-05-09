@@ -1,2 +1,3 @@
 # GameInventorySystem-C++
-C++ Practice
+
+Basic CRUD Implementation
