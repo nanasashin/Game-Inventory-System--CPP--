@@ -9,7 +9,7 @@ struct Money {
 };
 
 struct Armor {
-    enum Type {head, chest, leggings, boots};
+    enum Type {head, chest, leggings, boots, MAX_ARMOR};
 
     std::string name;
     Type a_type;
@@ -23,7 +23,7 @@ struct Weapon {
 };
 
 struct Item {
-    enum Type {armor, food, crafting, building};
+    enum Type {armor, food, crafting, building, weapon, MAX_ITEM_TYPE};
 
     std::string name = "";
     Type type;

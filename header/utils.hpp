@@ -21,13 +21,14 @@ public:
             case Item::food: temp = "Food"; break;
             case Item::crafting: temp = "Crafting"; break;
             case Item::building: temp = "Buidling"; break;
+            case Item::weapon: temp = "Weapon"; break;
         }
 
         std::cout
             << " | " << text_handler(temp, TextSize::type)
             << " | " << text_handler(item.name, TextSize::name)
             << " | " << text_handler(std::to_string(item.quantity), TextSize::quantity)
-            << " | " << text_handler(std::to_string(item.sell_price.value), TextSize::price)
+            << " | " << text_handler(std::to_string(item.sell_price.value), TextSize::price) << "\n"
         ;
     }
 

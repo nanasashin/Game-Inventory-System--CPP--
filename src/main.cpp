@@ -5,5 +5,8 @@
 
 int main() {
     Player player("nanashi");
+    player.add_item_in_inventory(Item{"knife", Item::weapon, Money{10}, 5});
+    player.add_item_in_inventory(Item{"wooden door", Item::building, Money{2}, 2});
+    player.display_inventory_item();
     return 0;
 }
