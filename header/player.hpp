@@ -2,6 +2,7 @@
 #define PLAYER_HPP_
 
 #include "items.hpp"
+#include "parameter.hpp"
 
 class Player {
 public:
