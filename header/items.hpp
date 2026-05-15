@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
 struct Money {
     int value;
@@ -13,6 +14,7 @@ struct Armor {
 
     std::string name;
     Type a_type;
+    std::map<std::string, Parameter>;
 };
 
 struct Weapon {
@@ -30,5 +32,7 @@ struct Item {
     Money sell_price;
     int quantity = 0;
 };
+
+
 
 #endif
