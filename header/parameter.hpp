@@ -10,6 +10,11 @@ public:
         MAX_TYPE
     };
 
+    enum Modifier {
+        defense,
+        MAX_MODIFIER
+    };
+
     enum UpdateType {
         increase, 
         decrease,
